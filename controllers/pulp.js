@@ -38,12 +38,12 @@ const deletePulp = async (req, res) => {
     let { items, count } = await database.fetch({ accessKey });
     if (count) {
       await database.delete(items[0].key);
-      res.status(200).send({ message: "pulp deleted successfully" });
+      res.status(200).send({ message: "Pulp deleted successfully" });
     } else {
-      res.status(404).send({ message: "pulp not found" });
+      res.status(404).send({ message: "Pulp not found" });
     }
   } catch (error) {
-    res.status(500).send({ message: "internal server error" });
+    res.status(500).send({ message: "Internal server error" });
   }
 }
 
